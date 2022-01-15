@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block title %}Profile{% endblock %} {% block
+content %}
+<form method="POST">
+  <h3 id="update-profile-heading" align="center">UPDATE</h3>
+
+  <div class="form-group">
+
+    <label for="user_name">Username</label>
+    <input type="text" id="user_name" name="user_name" class="form-control" placeholder="Enter Username" value="{{ user.user_name }}"/>
+
+    <label for="shipping_address">Shipping Address</label>
+    <input type="shipping_address" id="shipping_address" name="shipping_address" class="form-control" placeholder="Shipping Address" value="{{ user.shipping_address }}"/>
+
+    <label for="postal_code">Postal Code</label>
+    <input type="postal_code" id="postal_code" name="postal_code" class="form-control" placeholder="Postal Code" value="{{ user.postal_code }}"/>
+
+    <br />
+    <br />
+
+    <br />
+
+    <div align="center">
+      <button id="update-button" class="btn btn-primary" type="submit">Save</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

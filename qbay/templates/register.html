@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block title %}Register{% endblock %} {% block
+content %}
+<form method="POST">
+  <h3 align="center">Register</h3>
+
+  <div class="form-group">
+    <label for="first_name">Name</label>
+    <input type="text" id="first_name" name="first_name" class="form-control" placeholder="Enter Name"/>
+
+    <label for="last_name">Surname</label>
+    <input type="text" id="last_name" name="last_name" class="form-control" placeholder="Enter Surname"/>
+
+    <label for="email">Email Address</label>
+    <input type="text" id="email" name="email" class="form-control" placeholder="Enter Email"/>
+
+    <label for="user_name">Username</label>
+    <input type="text" id="user_name" name="user_name" class="form-control" placeholder="Enter Username"/>
+
+    <label for="password1">Password</label>
+    <input type="password" id="password1" name="password1" class="form-control" placeholder="Enter Password"/>
+
+    <label for="password2">Confirm Same Password</label>
+    <input type="password" id="password2" name="password2" class="form-control" placeholder="Enter Password Again"/>
+
+    <label for="shipping_address">Shipping Address</label>
+    <input type="shipping_address" id="shipping_address" name="shipping_address" class="form-control" placeholder="Shipping Address"/>
+
+    <label for="postal_code">Postal Code</label>
+    <input type="postal_code" id="postal_code" name="postal_code" class="form-control" placeholder="Postal Code"/>
+
+    <label for="balance">Initialize Balance</label>
+    <input type="balance" id="balance" name="balance" class="form-control" placeholder="$100"/>
+
+    <br />
+    <br />
+
+    <p>By creating an account with Qbay you agree to our <a href="#">Terms & Privacy</a>.</p>
+    <br />
+
+    <div align="center">
+      <button id="sign-up" class="btn btn-primary" type="submit">Sign Up</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

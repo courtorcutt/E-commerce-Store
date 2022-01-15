@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1 id="profile-heading">{% block title %}Profile{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<h2 id="welcome-heading">Welcome {{ user.first_name}} {{ user.last_name }}!</h2>
+
+
+<h2>Here is your info</h2>
+
+<div id="user-profile">
+    <div>
+        <h5 id="user_name-heading" >username: </h5> <p id="user_name"> {{ user.user_name }} </p>       <h5 id="email_heading"> email: </h5> <p id="email">{{ user.email }} </p>
+        <h5 id="shipping_address-heading" >shipping: </h5> <p id="shipping_address">{{ user.shipping_address }}</p>         <h5 id="postal_code-heading"> postal: </h5>  <p id="postal_code">{{ user.postal_code }} </p>
+        <h5 id="balance-heading" >balance:</h5> <p id="balance">{{ user.balance }} </p>
+        <a id="update-profile-link" href="/update-profile">update the profile</a>
+    </div>
+</div>
+
+<a id="logout-link" href='/logout'>logout</a>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+<script>
+    function display_form() {
+            var button = document.getElementById("form_button");
+            var from = document.getElementById("form");
+            if (button.style.display === "block") {
+                button.style.display = "none";
+            } 
+             if (form.style.display === "none") {
+                form.style.display = "block";
+            } 
+            
+    }
+</script>
+<h4 id='message'>{{message}} {{user.first_name}}</h4>
+<br />
+<button style="display: block" class="btn btn-primary" id="form_button" onclick="display_form()">Update your Products</button>
+<div id="form" style="display: none">
+    <form method="POST" >
+        <div class="form-group">
+            <label for="id">Enter the id of the product you wish to update</label>
+            <input class="form-control" type="number" name="id" id="id" placeholder= "id here">
+            <br />
+            <p>Change all or some of the following</p>
+            <label for="title">Title</label>
+            <input class="form-control" name="title" id="title" >
+            <label for="description">Description</label>
+            <input class="form-control" name="description" id="description" >
+            <label for="type">Type</label>
+            <input class="form-control"  name="type" id="type">
+            <label for="price" >Price</label>
+            <input class="form-control" type="number" name="price" id="price" >
+            <br />
+            <button class="btn btn-primary" id = "update" type="submit">Update</button>
+            <br />
+            <br />
+            </div>
+    </form>
+</div>
+  <br />
+    {% for product in products %}
+    <div>
+        <h5>ID: {{ product.id }}<br />Title: {{ product.title }}<br />Description: {{ product.description }}<br />Type: {{ product.product_type }}<br />Price: {{ product.price }}<br />Sold: {{ product.isSold }}<br /> Buyer: {{ product.buyer_email }}<br /></h5>
+        <h5>-----------------------------------</h5>
+    
+    </div>
+    
+    {% endfor %}
+<br /><br />
+<h4 id='message2'>{{message2}}</h4>
+  <br />
+    {% for product in products2 %}
+    <div>
+        <h5>ID: {{ product.id }}<br />Title: {{ product.title }}<br />Description: {{ product.description }}<br />Type: {{ product.product_type }}<br />Price: {{ product.price }}<br /></h5>
+        <h5>-----------------------------------</h5>
+    
+    </div>
+    
+    {% endfor %}
+<br />
+
+
+{% endblock %}
