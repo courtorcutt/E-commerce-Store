@@ -18,6 +18,7 @@ All backend and frontend files were tested using black-box methods. Below is an 
 <img width="515" alt="Screen Shot 2022-01-15 at 2 36 11 AM" src="https://user-images.githubusercontent.com/72311187/149605819-e25756a9-4b99-4d01-a6c5-71453e05b202.png">
 
 The backend models were tested rigourously as well to ensure the user had a complex enough password, the email format is valid, sections aren't left blank, there are no spaces in the username, etc.
+
 <img width="564" alt="Screen Shot 2022-01-15 at 2 39 27 AM" src="https://user-images.githubusercontent.com/72311187/149605909-49515153-043c-4552-8a63-24864d9288a4.png">
 
 The controllers.py has functions for all the webpage routes (navigation file). It defines which functions use GET and POST methods, validates login and registration input and flashes an error when something doesn't pass the testing. The productsMethods.py file checks to ensure the product inputs meet all requirements. The userDataAccess.py file contains 4 key functions of searching for a specific user, updating a users information, updating a users bank balance, as well as inserting the user into the database. 
