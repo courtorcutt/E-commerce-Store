@@ -1,6 +1,6 @@
 # E-Commerce Store (used Python, Flask, and Bootstrap for the CSS. Everything was tested using black-box methods such as functionality, input-partitioning, output-partitioning, and boundary testing. All code met PEP8 standards, used a pull request template, and is well commented.)
 
-Using Scrum - athe gile development methodology, this e-commerce store was created over the span of four months and is still continuing to be improved. Through six sprints focusing on the backend, frontend, security, and deployment of the store, a basic version of eBay was created. 
+Using Scrum - agile development methodology, this e-commerce store was created over the span of four months and is still continuing to be improved. Through six sprints focusing on the backend, frontend, security, and deployment of the store, a basic version of eBay was created. 
 
 First the database models were created in the backend. This consisted of Users, Product, Transaction, and Review. For example, below is a snipet of the Users model.
 
@@ -23,6 +23,6 @@ The backend models were tested rigourously as well to ensure the user had a comp
 
 The controllers.py has functions for all the webpage routes (navigation file). It defines which functions use GET and POST methods, validates login and registration input and flashes an error when something doesn't pass the testing. The productsMethods.py file checks to ensure the product inputs meet all requirements. The userDataAccess.py file contains 4 key functions of searching for a specific user, updating a users information, updating a users bank balance, as well as inserting the user into the database. 
 
-Then the security of the store was tested. Reports of XSS attacks and SQL injection attacks are visible in the repository. As I update this repository, I will be focusing more on the security of the application. 
+Then the security of the store was tested. Reports of XSS attacks and SQL injection attacks are visible in the repository. 
 
 At the end Docker was used to create an image of the repository to deploy it. Here is the link:  
