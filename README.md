@@ -25,4 +25,4 @@ The controllers.py has functions for all the webpage routes (navigation file). I
 
 Then the security of the store was tested. Reports of XSS attacks and SQL injection attacks are visible in the repository. 
 
-At the end Docker was used to create an image of the repository to deploy it. Here is the link:  
+At the end Docker was used to create an image of the repository to deploy it. Here is the link:  https://www.youtube.com/watch?v=9h9c-LT1KZg&ab_channel=NathanKowal
