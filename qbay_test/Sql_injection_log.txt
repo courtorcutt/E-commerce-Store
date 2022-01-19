@@ -1,0 +1,276 @@
+        ___
+       __H__
+ ___ ___[)]_____ ___ ___  {1.5.11.8#dev}
+|_ -| . [,]     | .'| . |
+|___|_  ["]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 23:20:55 /2021-11-18/
+
+do you want to check for the existence of site's sitemap(.xml) [y/N] N
+[23:20:55] [INFO] starting crawler for target URL 'http://127.0.0.1:8081/'
+[23:20:55] [INFO] searching for links with depth 1
+got a 302 redirect to 'http://127.0.0.1:8081/home'. Do you want to follow? [Y/n] Y
+[23:20:55] [INFO] searching for links with depth 2
+please enter number of threads? [Enter for 1 (current)] 1
+[23:20:55] [WARNING] running in a single-thread mode. This could take a while
+[23:20:55] [INFO] searching for links with depth 3
+please enter number of threads? [Enter for 1 (current)] 1
+[23:20:55] [WARNING] running in a single-thread mode. This could take a while
+[23:20:55] [INFO] searching for links with depth 4
+please enter number of threads? [Enter for 1 (current)] 1
+[23:20:55] [WARNING] running in a single-thread mode. This could take a while
+[23:20:55] [INFO] searching for links with depth 5
+please enter number of threads? [Enter for 1 (current)] 1
+[23:20:55] [WARNING] running in a single-thread mode. This could take a while
+[23:20:55] [INFO] searching for links with depth 6
+please enter number of threads? [Enter for 1 (current)] 1
+[23:20:55] [WARNING] running in a single-thread mode. This could take a while
+[23:20:55] [INFO] searching for links with depth 7
+please enter number of threads? [Enter for 1 (current)] 1
+[23:20:55] [WARNING] running in a single-thread mode. This could take a while
+[23:20:55] [INFO] searching for links with depth 8
+please enter number of threads? [Enter for 1 (current)] 1
+[23:20:55] [WARNING] running in a single-thread mode. This could take a while
+[23:20:55] [INFO] searching for links with depth 9
+please enter number of threads? [Enter for 1 (current)] 1
+[23:20:55] [WARNING] running in a single-thread mode. This could take a while
+[23:20:55] [INFO] searching for links with depth 10
+please enter number of threads? [Enter for 1 (current)] 1
+[23:20:55] [WARNING] running in a single-thread mode. This could take a while
+do you want to normalize crawling results [Y/n] Y
+do you want to store crawling results to a temporary file for eventual further processing with other tools [y/N] N
+[23:20:55] [INFO] found a total of 2 targets
+[1/2] Form:
+POST http://127.0.0.1:8081/login
+POST data: email=&password=
+do you want to test this form? [Y/n/q] 
+> Y
+Edit POST data [default: email=&password=] (Warning: blank fields detected): email=&password=
+do you want to fill blank fields with random values? [Y/n] Y
+[23:20:55] [INFO] using '/Users/taliaedwards/.local/share/sqlmap/output/results-11182021_1120pm.csv' as the CSV results file in multiple targets mode
+[23:20:56] [WARNING] there is a DBMS error found in the HTTP response body which could interfere with the results of the tests
+[23:20:56] [INFO] checking if the target is protected by some kind of WAF/IPS
+[23:20:56] [INFO] testing if the target URL content is stable
+[23:20:56] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[23:20:57] [INFO] testing if POST parameter 'email' is dynamic
+[23:20:57] [WARNING] POST parameter 'email' does not appear to be dynamic
+[23:20:57] [INFO] heuristic (basic) test shows that POST parameter 'email' might be injectable (possible DBMS: 'SQLite')
+[23:20:58] [INFO] testing for SQL injection on POST parameter 'email'
+it looks like the back-end DBMS is 'SQLite'. Do you want to skip test payloads specific for other DBMSes? [Y/n] Y
+for the remaining tests, do you want to include all tests for 'SQLite' extending provided level (1) and risk (1) values? [Y/n] Y
+[23:20:58] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:20:58] [WARNING] reflective value(s) found and filtering out
+[23:21:00] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:21:00] [INFO] testing 'Generic inline queries'
+[23:21:00] [INFO] testing 'SQLite inline queries'
+[23:21:00] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query - comment)'
+[23:21:00] [WARNING] time-based comparison requires larger statistical model, please wait....... (done)
+[23:21:02] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query)'
+[23:21:04] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query)'
+[23:21:06] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query)'
+[23:21:09] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query - comment)'
+[23:21:10] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query - comment)'
+[23:21:12] [INFO] testing 'SQLite > 2.0 time-based blind - Parameter replace (heavy query)'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] Y
+[23:21:12] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:21:13] [WARNING] POST parameter 'email' does not seem to be injectable
+[23:21:13] [INFO] testing if POST parameter 'password' is dynamic
+[23:21:13] [WARNING] POST parameter 'password' does not appear to be dynamic
+[23:21:13] [INFO] heuristic (basic) test shows that POST parameter 'password' might be injectable (possible DBMS: 'SQLite')
+[23:21:13] [INFO] testing for SQL injection on POST parameter 'password'
+[23:21:13] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:21:14] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:21:14] [INFO] testing 'Generic inline queries'
+[23:21:14] [INFO] testing 'SQLite inline queries'
+[23:21:15] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query - comment)'
+[23:21:16] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query)'
+[23:21:17] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query)'
+[23:21:20] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query)'
+[23:21:22] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query - comment)'
+[23:21:24] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query - comment)'
+[23:21:26] [INFO] testing 'SQLite > 2.0 time-based blind - Parameter replace (heavy query)'
+[23:21:26] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:21:26] [WARNING] POST parameter 'password' does not seem to be injectable
+[23:21:26] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. As heuristic test turned out positive you are strongly advised to continue on with the tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment') and/or switch '--random-agent', skipping to the next target
+[23:21:26] [WARNING] HTTP error codes detected during run:
+500 (Internal Server Error) - 554 times
+[2/2] Form:
+POST http://127.0.0.1:8081/register
+POST data: first_name=&last_name=&email=&user_name=&password1=&password2=&shipping_address=&postal_code=&balance=
+do you want to test this form? [Y/n/q] 
+> Y
+Edit POST data [default: first_name=&last_name=&email=&user_name=&password1=&password2=&shipping_address=&postal_code=&balance=] (Warning: blank fields detected): first_name=&last_name=&email=&user_name=&password1=&password2=&shipping_address=&postal_code=&balance=
+do you want to fill blank fields with random values? [Y/n] Y
+[23:21:27] [WARNING] there is a DBMS error found in the HTTP response body which could interfere with the results of the tests
+[23:21:27] [INFO] testing if the target URL content is stable
+[23:21:27] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[23:21:27] [INFO] testing if POST parameter 'first_name' is dynamic
+[23:21:28] [WARNING] POST parameter 'first_name' does not appear to be dynamic
+[23:21:28] [INFO] heuristic (basic) test shows that POST parameter 'first_name' might be injectable (possible DBMS: 'SQLite')
+[23:21:28] [INFO] testing for SQL injection on POST parameter 'first_name'
+it looks like the back-end DBMS is 'SQLite'. Do you want to skip test payloads specific for other DBMSes? [Y/n] Y
+for the remaining tests, do you want to include all tests for 'SQLite' extending provided level (1) and risk (1) values? [Y/n] Y
+[23:21:28] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:21:31] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:21:31] [INFO] testing 'Generic inline queries'
+[23:21:31] [INFO] testing 'SQLite inline queries'
+[23:21:31] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query - comment)'
+[23:21:31] [WARNING] time-based comparison requires larger statistical model, please wait....... (done)
+[23:21:33] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query)'
+[23:21:35] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query)'
+[23:21:37] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query)'
+[23:21:39] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query - comment)'
+[23:21:42] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query - comment)'
+[23:21:43] [INFO] testing 'SQLite > 2.0 time-based blind - Parameter replace (heavy query)'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] Y
+[23:21:43] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:21:44] [WARNING] POST parameter 'first_name' does not seem to be injectable
+[23:21:44] [INFO] testing if POST parameter 'last_name' is dynamic
+[23:21:44] [WARNING] POST parameter 'last_name' does not appear to be dynamic
+[23:21:44] [INFO] heuristic (basic) test shows that POST parameter 'last_name' might be injectable (possible DBMS: 'SQLite')
+[23:21:44] [INFO] testing for SQL injection on POST parameter 'last_name'
+[23:21:44] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:21:45] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:21:45] [INFO] testing 'Generic inline queries'
+[23:21:45] [INFO] testing 'SQLite inline queries'
+[23:21:46] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query - comment)'
+[23:21:47] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query)'
+[23:21:48] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query)'
+[23:21:51] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query)'
+[23:21:54] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query - comment)'
+[23:21:56] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query - comment)'
+[23:21:58] [INFO] testing 'SQLite > 2.0 time-based blind - Parameter replace (heavy query)'
+[23:21:58] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:21:58] [WARNING] POST parameter 'last_name' does not seem to be injectable
+[23:21:58] [INFO] testing if POST parameter 'email' is dynamic
+[23:21:58] [WARNING] POST parameter 'email' does not appear to be dynamic
+[23:21:58] [INFO] heuristic (basic) test shows that POST parameter 'email' might be injectable (possible DBMS: 'SQLite')
+[23:21:59] [INFO] testing for SQL injection on POST parameter 'email'
+[23:21:59] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:21:59] [WARNING] reflective value(s) found and filtering out
+[23:22:00] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:22:00] [INFO] testing 'Generic inline queries'
+[23:22:00] [INFO] testing 'SQLite inline queries'
+[23:22:00] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query - comment)'
+[23:22:01] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query)'
+[23:22:03] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query)'
+[23:22:06] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query)'
+[23:22:08] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query - comment)'
+[23:22:15] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query - comment)'
+[23:22:17] [INFO] testing 'SQLite > 2.0 time-based blind - Parameter replace (heavy query)'
+[23:22:17] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:22:18] [WARNING] POST parameter 'email' does not seem to be injectable
+[23:22:18] [INFO] testing if POST parameter 'user_name' is dynamic
+[23:22:18] [WARNING] POST parameter 'user_name' does not appear to be dynamic
+[23:22:18] [INFO] heuristic (basic) test shows that POST parameter 'user_name' might be injectable (possible DBMS: 'SQLite')
+[23:22:18] [INFO] testing for SQL injection on POST parameter 'user_name'
+[23:22:18] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:22:19] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:22:19] [INFO] testing 'Generic inline queries'
+[23:22:19] [INFO] testing 'SQLite inline queries'
+[23:22:19] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query - comment)'
+[23:22:20] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query)'
+[23:22:22] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query)'
+[23:22:25] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query)'
+[23:22:27] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query - comment)'
+[23:22:29] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query - comment)'
+[23:22:30] [INFO] testing 'SQLite > 2.0 time-based blind - Parameter replace (heavy query)'
+[23:22:31] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:22:31] [WARNING] POST parameter 'user_name' does not seem to be injectable
+[23:22:31] [INFO] testing if POST parameter 'password1' is dynamic
+[23:22:31] [WARNING] POST parameter 'password1' does not appear to be dynamic
+[23:22:31] [INFO] heuristic (basic) test shows that POST parameter 'password1' might be injectable (possible DBMS: 'SQLite')
+[23:22:31] [INFO] testing for SQL injection on POST parameter 'password1'
+[23:22:32] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:22:41] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:22:41] [INFO] testing 'Generic inline queries'
+[23:22:41] [INFO] testing 'SQLite inline queries'
+[23:22:41] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query - comment)'
+[23:22:42] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query)'
+[23:22:44] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query)'
+[23:22:47] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query)'
+[23:22:49] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query - comment)'
+[23:22:51] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query - comment)'
+[23:22:53] [INFO] testing 'SQLite > 2.0 time-based blind - Parameter replace (heavy query)'
+[23:22:53] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:22:53] [WARNING] POST parameter 'password1' does not seem to be injectable
+[23:22:53] [INFO] testing if POST parameter 'password2' is dynamic
+[23:22:53] [WARNING] POST parameter 'password2' does not appear to be dynamic
+[23:22:53] [INFO] heuristic (basic) test shows that POST parameter 'password2' might be injectable (possible DBMS: 'SQLite')
+[23:22:54] [INFO] testing for SQL injection on POST parameter 'password2'
+[23:22:54] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:22:55] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:22:55] [INFO] testing 'Generic inline queries'
+[23:22:55] [INFO] testing 'SQLite inline queries'
+[23:22:55] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query - comment)'
+[23:22:56] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query)'
+[23:22:59] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query)'
+[23:23:01] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query)'
+[23:23:04] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query - comment)'
+[23:23:40] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query - comment)'
+[23:23:41] [INFO] testing 'SQLite > 2.0 time-based blind - Parameter replace (heavy query)'
+[23:23:41] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:23:42] [WARNING] POST parameter 'password2' does not seem to be injectable
+[23:23:42] [INFO] testing if POST parameter 'shipping_address' is dynamic
+[23:23:42] [WARNING] POST parameter 'shipping_address' does not appear to be dynamic
+[23:23:42] [INFO] heuristic (basic) test shows that POST parameter 'shipping_address' might be injectable (possible DBMS: 'SQLite')
+[23:23:42] [INFO] testing for SQL injection on POST parameter 'shipping_address'
+[23:23:42] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:23:44] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:23:44] [INFO] testing 'Generic inline queries'
+[23:23:44] [INFO] testing 'SQLite inline queries'
+[23:23:44] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query - comment)'
+[23:23:45] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query)'
+[23:23:47] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query)'
+[23:23:50] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query)'
+[23:23:52] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query - comment)'
+[23:23:54] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query - comment)'
+[23:23:56] [INFO] testing 'SQLite > 2.0 time-based blind - Parameter replace (heavy query)'
+[23:23:56] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:23:56] [WARNING] POST parameter 'shipping_address' does not seem to be injectable
+[23:23:56] [INFO] testing if POST parameter 'postal_code' is dynamic
+[23:23:57] [WARNING] POST parameter 'postal_code' does not appear to be dynamic
+[23:23:57] [INFO] heuristic (basic) test shows that POST parameter 'postal_code' might be injectable (possible DBMS: 'SQLite')
+[23:23:57] [INFO] testing for SQL injection on POST parameter 'postal_code'
+[23:23:57] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:23:58] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:23:58] [INFO] testing 'Generic inline queries'
+[23:23:58] [INFO] testing 'SQLite inline queries'
+[23:23:58] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query - comment)'
+[23:24:00] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query)'
+[23:24:01] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query)'
+[23:24:04] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query)'
+[23:24:07] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query - comment)'
+[23:24:53] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query - comment)'
+[23:24:54] [INFO] testing 'SQLite > 2.0 time-based blind - Parameter replace (heavy query)'
+[23:24:54] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:24:55] [WARNING] POST parameter 'postal_code' does not seem to be injectable
+[23:24:55] [INFO] testing if POST parameter 'balance' is dynamic
+[23:24:55] [WARNING] POST parameter 'balance' does not appear to be dynamic
+[23:24:55] [INFO] heuristic (basic) test shows that POST parameter 'balance' might be injectable (possible DBMS: 'SQLite')
+[23:24:55] [INFO] testing for SQL injection on POST parameter 'balance'
+[23:24:55] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:24:57] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[23:24:57] [INFO] testing 'Generic inline queries'
+[23:24:57] [INFO] testing 'SQLite inline queries'
+[23:24:57] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query - comment)'
+[23:24:58] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query)'
+[23:25:00] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query)'
+[23:25:02] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query)'
+[23:25:06] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query - comment)'
+[23:25:08] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query - comment)'
+[23:25:09] [INFO] testing 'SQLite > 2.0 time-based blind - Parameter replace (heavy query)'
+[23:25:09] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:25:10] [WARNING] POST parameter 'balance' does not seem to be injectable
+[23:25:10] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. As heuristic test turned out positive you are strongly advised to continue on with the tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment') and/or switch '--random-agent', skipping to the next target
+[23:25:10] [WARNING] HTTP error codes detected during run:
+500 (Internal Server Error) - 2461 times
+[23:25:10] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/Users/taliaedwards/.local/share/sqlmap/output/results-11182021_1120pm.csv'
+
+[*] ending @ 23:25:10 /2021-11-18/
+

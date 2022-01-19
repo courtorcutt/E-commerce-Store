@@ -1,0 +1,9 @@
+SQLAlchemy==1.2.14
+datetime
+Flask
+Flask-SQLAlchemy
+pytest
+flake8
+email-validator
+seleniumbase
+pymysql

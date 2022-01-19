@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+     body {
+         font-family: "Helvetica Neue";
+     }
+</style>
+    <meta charset="UTF-8">
+    <title>Product Reviews</title>
+    <h1>Product Reviews:</h1>
+    <h3> Please Verify your Account: </h3>
+    <p><input type = "text" placeholder = "Username" name = "user_entered"></p>
+    <p><input type = "text" placeholder = "Password" name = "pass_entered"></p>
+    <p>You are successfully logged in as .. </p>
+    <h3> It looks like you recently purchased these items in your transaction history: </h3>
+    <p> placeholder of list .... </p>
+    <h3> Would you like to leave a product review?</h3>
+    <form action = "/" METHOD = "POST">
+            <p><input type = "text" placeholder = "Product Review..." name = "product_submission" maxlength="100"></p>
+        <p><input type="submit" value="Add Review"/></p>
+    </form>
+
+    {% for submission in submissions %}
+        <h4>
+        <p>Your product review has been successfully submitted: </p>
+        </h4>
+        {{ submission.product_review }}
+    {% endfor %}
+</head>
+<body>
+</body>
+</html>

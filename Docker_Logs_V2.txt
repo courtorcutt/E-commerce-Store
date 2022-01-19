@@ -1,0 +1,46 @@
+C:\Users\brand\OneDrive - Queen's University\Documents\GitHub\CMPE327-Group7>docker build --tag=cmpe327group7/qbay:v2 .
+[+] Building 12.3s (13/13) FINISHED
+ => [internal] load build definition from Dockerfile                           0.1s
+ => => transferring dockerfile: 32B                                            0.0s
+ => [internal] load .dockerignore                                              0.1s
+ => => transferring context: 2B                                                0.0s
+ => [internal] load metadata for docker.io/library/python:3.8-slim            11.7s
+ => [1/8] FROM docker.io/library/python:3.8-slim@sha256:0f6d6953c6612786ed05a  0.0s
+ => [internal] load build context                                              0.1s
+ => => transferring context: 6.90kB                                            0.1s
+ => CACHED [2/8] RUN mkdir /app                                                0.0s
+ => CACHED [3/8] WORKDIR /app                                                  0.0s
+ => CACHED [4/8] ADD requirements.txt /app                                     0.0s
+ => CACHED [5/8] RUN pip3 install -r requirements.txt                          0.0s
+ => CACHED [6/8] ADD . /app                                                    0.0s
+ => CACHED [7/8] ADD wait-for-it.sh /app                                       0.0s
+ => CACHED [8/8] RUN chmod +x /app/wait-for-it.sh                              0.0s
+ => exporting to image                                                         0.0s
+ => => exporting layers                                                        0.0s
+ => => writing image sha256:fbb69e2e05c80e9cf35d7bd2e2a8a35a25b16e6ca3e595ac2  0.0s
+ => => naming to docker.io/cmpe327group7/qbay:v2                               0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+
+C:\Users\brand\OneDrive - Queen's University\Documents\GitHub\CMPE327-Group7>docker login
+Authenticating with existing credentials...
+Login Succeeded
+
+Logging in with your password grants your terminal complete access to your account.
+For better security, log in with a limited-privilege personal access token. Learn more at https://docs.docker.com/go/access-tokens/
+
+C:\Users\brand\OneDrive - Queen's University\Documents\GitHub\CMPE327-Group7>docker run -p 8081:8081 cmpe327group7/qbay:v2 python3 -m qbay
+ * Serving Flask app 'qbay' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://172.17.0.3:8081/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 860-676-622
+172.17.0.1 - - [09/Dec/2021 23:40:25] "GET / HTTP/1.1" 302 -
+172.17.0.1 - - [09/Dec/2021 23:40:25] "GET /home HTTP/1.1" 200 -
+

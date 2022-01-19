@@ -1,0 +1,523 @@
+        ___
+       __H__
+ ___ ___[)]_____ ___ ___  {1.5.11.8#dev}
+|_ -| . [']     | .'| . |
+|___|_  ["]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 18:06:19 /2021-11-19/
+
+do you want to check for the existence of site's sitemap(.xml) [y/N] N
+[18:06:19] [INFO] starting crawler for target URL 'http://127.0.0.1:8081/'
+[18:06:19] [INFO] searching for links with depth 1
+got a 302 redirect to 'http://127.0.0.1:8081/home'. Do you want to follow? [Y/n] Y
+[18:06:19] [INFO] searching for links with depth 2
+please enter number of threads? [Enter for 1 (current)] 1
+[18:06:19] [WARNING] running in a single-thread mode. This could take a while
+[18:06:20] [INFO] searching for links with depth 3
+please enter number of threads? [Enter for 1 (current)] 1
+[18:06:20] [WARNING] running in a single-thread mode. This could take a while
+[18:06:20] [INFO] searching for links with depth 4
+please enter number of threads? [Enter for 1 (current)] 1
+[18:06:20] [WARNING] running in a single-thread mode. This could take a while
+[18:06:20] [INFO] searching for links with depth 5
+please enter number of threads? [Enter for 1 (current)] 1
+[18:06:20] [WARNING] running in a single-thread mode. This could take a while
+[18:06:20] [INFO] searching for links with depth 6
+please enter number of threads? [Enter for 1 (current)] 1
+[18:06:20] [WARNING] running in a single-thread mode. This could take a while
+[18:06:20] [INFO] searching for links with depth 7
+please enter number of threads? [Enter for 1 (current)] 1
+[18:06:20] [WARNING] running in a single-thread mode. This could take a while
+[18:06:20] [INFO] searching for links with depth 8
+please enter number of threads? [Enter for 1 (current)] 1
+[18:06:20] [WARNING] running in a single-thread mode. This could take a while
+[18:06:20] [INFO] searching for links with depth 9
+please enter number of threads? [Enter for 1 (current)] 1
+[18:06:20] [WARNING] running in a single-thread mode. This could take a while
+[18:06:20] [INFO] searching for links with depth 10
+please enter number of threads? [Enter for 1 (current)] 1
+[18:06:20] [WARNING] running in a single-thread mode. This could take a while
+do you want to normalize crawling results [Y/n] Y
+do you want to store crawling results to a temporary file for eventual further processing with other tools [y/N] N
+[18:06:20] [INFO] found a total of 4 targets
+[1/4] Form:
+POST http://127.0.0.1:8081/create_product
+Cookie: session=eyJ1c2VyX2xvZ2dlZF9pbiI6InRhbGlhLmwuZWR3YXJkc0BnbWFpbC5jb20ifQ.YZgreA.3N_VUMGOeTiLhawSn4RQqBYu0c4
+POST data: title=&price=&description=&date=
+do you want to test this form? [Y/n/q] 
+> Y
+Edit POST data [default: title=&price=&description=&date=] (Warning: blank fields detected): title=&price=&description=&date=
+do you want to fill blank fields with random values? [Y/n] Y
+[18:06:20] [INFO] using '/Users/taliaedwards/.local/share/sqlmap/output/results-11192021_0606pm.csv' as the CSV results file in multiple targets mode
+[18:06:20] [WARNING] the web server responded with an HTTP error code (500) which could interfere with the results of the tests
+[18:06:20] [INFO] checking if the target is protected by some kind of WAF/IPS
+[18:06:20] [INFO] testing if the target URL content is stable
+[18:06:21] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[18:06:21] [INFO] testing if POST parameter 'title' is dynamic
+[18:06:21] [WARNING] POST parameter 'title' does not appear to be dynamic
+[18:06:21] [WARNING] heuristic (basic) test shows that POST parameter 'title' might not be injectable
+[18:06:21] [INFO] testing for SQL injection on POST parameter 'title'
+[18:06:21] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:22] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:22] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:22] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:23] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:23] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:23] [INFO] testing 'Generic inline queries'
+[18:06:23] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:23] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:23] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:23] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:23] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:24] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:24] [INFO] testing 'Oracle AND time-based blind'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] Y
+[18:06:24] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:24] [WARNING] POST parameter 'title' does not seem to be injectable
+[18:06:24] [INFO] testing if POST parameter 'price' is dynamic
+got a 302 redirect to 'http://127.0.0.1:8081/create_product'. Do you want to follow? [Y/n] Y
+redirect is a result of a POST request. Do you want to resend original POST data to a new location? [y/N] N
+[18:06:24] [INFO] POST parameter 'price' appears to be dynamic
+you provided a HTTP Cookie header value, while target URL provides its own cookies within HTTP Set-Cookie header which intersect with yours. Do you want to merge them in further requests? [Y/n] Y
+[18:06:24] [WARNING] heuristic (basic) test shows that POST parameter 'price' might not be injectable
+[18:06:24] [INFO] testing for SQL injection on POST parameter 'price'
+[18:06:24] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:25] [WARNING] reflective value(s) found and filtering out
+[18:06:25] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:25] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:26] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:26] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:26] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:26] [INFO] testing 'Generic inline queries'
+[18:06:26] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:26] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:26] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:26] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:26] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:27] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:27] [INFO] testing 'Oracle AND time-based blind'
+[18:06:27] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:27] [WARNING] POST parameter 'price' does not seem to be injectable
+[18:06:27] [WARNING] POST parameter 'description' does not appear to be dynamic
+[18:06:27] [WARNING] heuristic (basic) test shows that POST parameter 'description' might not be injectable
+[18:06:27] [INFO] testing for SQL injection on POST parameter 'description'
+[18:06:27] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:28] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:28] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:28] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:28] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:28] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:28] [INFO] testing 'Generic inline queries'
+[18:06:28] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:29] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:29] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:29] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:29] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:29] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:29] [INFO] testing 'Oracle AND time-based blind'
+[18:06:29] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:30] [WARNING] POST parameter 'description' does not seem to be injectable
+[18:06:30] [WARNING] POST parameter 'date' does not appear to be dynamic
+[18:06:30] [WARNING] heuristic (basic) test shows that POST parameter 'date' might not be injectable
+[18:06:30] [INFO] testing for SQL injection on POST parameter 'date'
+[18:06:30] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:30] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:30] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:30] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:30] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:31] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:31] [INFO] testing 'Generic inline queries'
+[18:06:31] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:31] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:31] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:31] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:31] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:31] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:31] [INFO] testing 'Oracle AND time-based blind'
+[18:06:32] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:32] [WARNING] POST parameter 'date' does not seem to be injectable
+[18:06:32] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment') and/or switch '--random-agent', skipping to the next target
+[18:06:32] [WARNING] HTTP error codes detected during run:
+500 (Internal Server Error) - 336 times
+[2/4] Form:
+POST http://127.0.0.1:8081/products
+Cookie: session=eyJ1c2VyX2xvZ2dlZF9pbiI6InRhbGlhLmwuZWR3YXJkc0BnbWFpbC5jb20ifQ.YZgreA.3N_VUMGOeTiLhawSn4RQqBYu0c4
+POST data: id=&title=&description=&type=&price=
+do you want to test this form? [Y/n/q] 
+> Y
+Edit POST data [default: id=&title=&description=&type=&price=] (Warning: blank fields detected): id=&title=&description=&type=&price=
+do you want to fill blank fields with random values? [Y/n] Y
+got a 302 redirect to 'http://127.0.0.1:8081/products'. Do you want to follow? [Y/n] Y
+redirect is a result of a POST request. Do you want to resend original POST data to a new location? [Y/n] Y
+[18:06:32] [INFO] testing if the target URL content is stable
+you provided a HTTP Cookie header value, while target URL provides its own cookies within HTTP Set-Cookie header which intersect with yours. Do you want to merge them in further requests? [Y/n] Y
+[18:06:32] [WARNING] POST parameter 'id' does not appear to be dynamic
+[18:06:32] [WARNING] heuristic (basic) test shows that POST parameter 'id' might not be injectable
+[18:06:33] [INFO] testing for SQL injection on POST parameter 'id'
+[18:06:33] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:33] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:33] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:33] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:33] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:33] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:33] [INFO] testing 'Generic inline queries'
+[18:06:33] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:33] [WARNING] time-based comparison requires larger statistical model, please wait. (done)
+[18:06:33] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:33] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:34] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:34] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:34] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:34] [INFO] testing 'Oracle AND time-based blind'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] Y
+[18:06:34] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:34] [WARNING] POST parameter 'id' does not seem to be injectable
+[18:06:34] [WARNING] POST parameter 'title' does not appear to be dynamic
+[18:06:34] [WARNING] heuristic (basic) test shows that POST parameter 'title' might not be injectable
+[18:06:34] [INFO] testing for SQL injection on POST parameter 'title'
+[18:06:34] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:35] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:35] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:35] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:35] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:35] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:35] [INFO] testing 'Generic inline queries'
+[18:06:35] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:35] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:35] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:35] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:35] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:36] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:36] [INFO] testing 'Oracle AND time-based blind'
+[18:06:36] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:36] [WARNING] POST parameter 'title' does not seem to be injectable
+[18:06:36] [WARNING] POST parameter 'description' does not appear to be dynamic
+[18:06:36] [WARNING] heuristic (basic) test shows that POST parameter 'description' might not be injectable
+[18:06:36] [INFO] testing for SQL injection on POST parameter 'description'
+[18:06:36] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:36] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:36] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:36] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:37] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:37] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:37] [INFO] testing 'Generic inline queries'
+[18:06:37] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:37] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:37] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:37] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:37] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:37] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:38] [INFO] testing 'Oracle AND time-based blind'
+[18:06:38] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:38] [WARNING] POST parameter 'description' does not seem to be injectable
+[18:06:38] [WARNING] POST parameter 'type' does not appear to be dynamic
+[18:06:38] [WARNING] heuristic (basic) test shows that POST parameter 'type' might not be injectable
+[18:06:38] [INFO] testing for SQL injection on POST parameter 'type'
+[18:06:38] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:38] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:38] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:38] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:38] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:39] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:39] [INFO] testing 'Generic inline queries'
+[18:06:39] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:39] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:39] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:39] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:39] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:39] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:39] [INFO] testing 'Oracle AND time-based blind'
+[18:06:40] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:40] [WARNING] POST parameter 'type' does not seem to be injectable
+[18:06:40] [WARNING] POST parameter 'price' does not appear to be dynamic
+[18:06:40] [WARNING] heuristic (basic) test shows that POST parameter 'price' might not be injectable
+[18:06:40] [INFO] testing for SQL injection on POST parameter 'price'
+[18:06:40] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:40] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:40] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:41] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:41] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:41] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:41] [INFO] testing 'Generic inline queries'
+[18:06:41] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:41] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:41] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:41] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:41] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:42] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:42] [INFO] testing 'Oracle AND time-based blind'
+[18:06:42] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:42] [WARNING] POST parameter 'price' does not seem to be injectable
+[18:06:42] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment') and/or switch '--random-agent', skipping to the next target
+[3/4] Form:
+POST http://127.0.0.1:8081/register
+Cookie: session=eyJ1c2VyX2xvZ2dlZF9pbiI6InRhbGlhLmwuZWR3YXJkc0BnbWFpbC5jb20ifQ.YZgreA.3N_VUMGOeTiLhawSn4RQqBYu0c4
+POST data: first_name=&last_name=&email=&user_name=&password1=&password2=&shipping_address=&postal_code=&balance=
+do you want to test this form? [Y/n/q] 
+> Y
+Edit POST data [default: first_name=&last_name=&email=&user_name=&password1=&password2=&shipping_address=&postal_code=&balance=] (Warning: blank fields detected): first_name=&last_name=&email=&user_name=&password1=&password2=&shipping_address=&postal_code=&balance=
+do you want to fill blank fields with random values? [Y/n] Y
+[18:06:42] [INFO] testing if the target URL content is stable
+you provided a HTTP Cookie header value, while target URL provides its own cookies within HTTP Set-Cookie header which intersect with yours. Do you want to merge them in further requests? [Y/n] Y
+[18:06:43] [INFO] target URL content is stable
+[18:06:43] [INFO] testing if POST parameter 'first_name' is dynamic
+[18:06:43] [WARNING] POST parameter 'first_name' does not appear to be dynamic
+[18:06:43] [WARNING] heuristic (basic) test shows that POST parameter 'first_name' might not be injectable
+[18:06:43] [INFO] testing for SQL injection on POST parameter 'first_name'
+[18:06:43] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:43] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:43] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:43] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:43] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:43] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:43] [INFO] testing 'Generic inline queries'
+[18:06:43] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:43] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:43] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:43] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:43] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:43] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:43] [INFO] testing 'Oracle AND time-based blind'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] Y
+[18:06:43] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:43] [WARNING] POST parameter 'first_name' does not seem to be injectable
+[18:06:43] [INFO] testing if POST parameter 'last_name' is dynamic
+[18:06:43] [WARNING] POST parameter 'last_name' does not appear to be dynamic
+[18:06:43] [WARNING] heuristic (basic) test shows that POST parameter 'last_name' might not be injectable
+[18:06:43] [INFO] testing for SQL injection on POST parameter 'last_name'
+[18:06:43] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:44] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:44] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:44] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:44] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:44] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:44] [INFO] testing 'Generic inline queries'
+[18:06:44] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:44] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:44] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:44] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:44] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:44] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:44] [INFO] testing 'Oracle AND time-based blind'
+[18:06:44] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:44] [WARNING] POST parameter 'last_name' does not seem to be injectable
+[18:06:44] [INFO] testing if POST parameter 'email' is dynamic
+[18:06:44] [WARNING] POST parameter 'email' does not appear to be dynamic
+[18:06:44] [WARNING] heuristic (basic) test shows that POST parameter 'email' might not be injectable
+[18:06:44] [INFO] testing for SQL injection on POST parameter 'email'
+[18:06:44] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:44] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:44] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:44] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:44] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:44] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:44] [INFO] testing 'Generic inline queries'
+[18:06:44] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:44] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:44] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:44] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:44] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:45] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:45] [INFO] testing 'Oracle AND time-based blind'
+[18:06:45] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:45] [WARNING] POST parameter 'email' does not seem to be injectable
+[18:06:45] [INFO] testing if POST parameter 'user_name' is dynamic
+[18:06:45] [WARNING] POST parameter 'user_name' does not appear to be dynamic
+[18:06:45] [WARNING] heuristic (basic) test shows that POST parameter 'user_name' might not be injectable
+[18:06:45] [INFO] testing for SQL injection on POST parameter 'user_name'
+[18:06:45] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:45] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:45] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:45] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:45] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:45] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:45] [INFO] testing 'Generic inline queries'
+[18:06:45] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:45] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:45] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:45] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:45] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:45] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:45] [INFO] testing 'Oracle AND time-based blind'
+[18:06:45] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:45] [WARNING] POST parameter 'user_name' does not seem to be injectable
+[18:06:45] [INFO] testing if POST parameter 'password1' is dynamic
+[18:06:45] [WARNING] POST parameter 'password1' does not appear to be dynamic
+[18:06:45] [WARNING] heuristic (basic) test shows that POST parameter 'password1' might not be injectable
+[18:06:45] [INFO] testing for SQL injection on POST parameter 'password1'
+[18:06:45] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:45] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:45] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:45] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:45] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:45] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:46] [INFO] testing 'Generic inline queries'
+[18:06:46] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:46] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:46] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:46] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:46] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:46] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:46] [INFO] testing 'Oracle AND time-based blind'
+[18:06:46] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:46] [WARNING] POST parameter 'password1' does not seem to be injectable
+[18:06:46] [INFO] testing if POST parameter 'password2' is dynamic
+[18:06:46] [WARNING] POST parameter 'password2' does not appear to be dynamic
+[18:06:46] [WARNING] heuristic (basic) test shows that POST parameter 'password2' might not be injectable
+[18:06:46] [INFO] testing for SQL injection on POST parameter 'password2'
+[18:06:46] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:46] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:46] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:46] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:46] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:46] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:46] [INFO] testing 'Generic inline queries'
+[18:06:46] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:46] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:46] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:46] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:46] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:46] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:46] [INFO] testing 'Oracle AND time-based blind'
+[18:06:46] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:46] [WARNING] POST parameter 'password2' does not seem to be injectable
+[18:06:46] [INFO] testing if POST parameter 'shipping_address' is dynamic
+[18:06:46] [WARNING] POST parameter 'shipping_address' does not appear to be dynamic
+[18:06:46] [WARNING] heuristic (basic) test shows that POST parameter 'shipping_address' might not be injectable
+[18:06:46] [INFO] testing for SQL injection on POST parameter 'shipping_address'
+[18:06:46] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:47] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:47] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:47] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:47] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:47] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:47] [INFO] testing 'Generic inline queries'
+[18:06:47] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:47] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:47] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:47] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:47] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:47] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:47] [INFO] testing 'Oracle AND time-based blind'
+[18:06:47] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:47] [WARNING] POST parameter 'shipping_address' does not seem to be injectable
+[18:06:47] [INFO] testing if POST parameter 'postal_code' is dynamic
+[18:06:47] [WARNING] POST parameter 'postal_code' does not appear to be dynamic
+[18:06:47] [WARNING] heuristic (basic) test shows that POST parameter 'postal_code' might not be injectable
+[18:06:47] [INFO] testing for SQL injection on POST parameter 'postal_code'
+[18:06:47] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:47] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:47] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:47] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:47] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:47] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:47] [INFO] testing 'Generic inline queries'
+[18:06:47] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:47] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:47] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:47] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:47] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:47] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:47] [INFO] testing 'Oracle AND time-based blind'
+[18:06:47] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:48] [WARNING] POST parameter 'postal_code' does not seem to be injectable
+[18:06:48] [INFO] testing if POST parameter 'balance' is dynamic
+[18:06:48] [WARNING] POST parameter 'balance' does not appear to be dynamic
+[18:06:48] [WARNING] heuristic (basic) test shows that POST parameter 'balance' might not be injectable
+[18:06:48] [INFO] testing for SQL injection on POST parameter 'balance'
+[18:06:48] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:48] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:48] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:48] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:48] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:48] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:48] [INFO] testing 'Generic inline queries'
+[18:06:48] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:48] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:48] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:48] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:48] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:48] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:48] [INFO] testing 'Oracle AND time-based blind'
+[18:06:48] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:48] [WARNING] POST parameter 'balance' does not seem to be injectable
+[18:06:48] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment') and/or switch '--random-agent', skipping to the next target
+[4/4] Form:
+POST http://127.0.0.1:8081/update-profile
+Cookie: session=eyJ1c2VyX2xvZ2dlZF9pbiI6InRhbGlhLmwuZWR3YXJkc0BnbWFpbC5jb20ifQ.YZgreA.3N_VUMGOeTiLhawSn4RQqBYu0c4
+POST data: user_name=OOGAbooga&shipping_address=None&postal_code=None
+do you want to test this form? [Y/n/q] 
+> Y
+Edit POST data [default: user_name=OOGAbooga&shipping_address=None&postal_code=None]: user_name=OOGAbooga&shipping_address=None&postal_code=None
+got a 302 redirect to 'http://127.0.0.1:8081/profile'. Do you want to follow? [Y/n] Y
+redirect is a result of a POST request. Do you want to resend original POST data to a new location? [Y/n] Y
+[18:06:48] [INFO] testing if the target URL content is stable
+you provided a HTTP Cookie header value, while target URL provides its own cookies within HTTP Set-Cookie header which intersect with yours. Do you want to merge them in further requests? [Y/n] Y
+[18:06:49] [WARNING] POST parameter 'user_name' does not appear to be dynamic
+[18:06:49] [WARNING] heuristic (basic) test shows that POST parameter 'user_name' might not be injectable
+[18:06:49] [INFO] testing for SQL injection on POST parameter 'user_name'
+[18:06:49] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:49] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:49] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:49] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:49] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:49] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:49] [INFO] testing 'Generic inline queries'
+[18:06:49] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:49] [WARNING] time-based comparison requires larger statistical model, please wait. (done)
+[18:06:50] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:50] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:50] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:50] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:50] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:50] [INFO] testing 'Oracle AND time-based blind'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] Y
+[18:06:50] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:50] [WARNING] POST parameter 'user_name' does not seem to be injectable
+[18:06:50] [WARNING] POST parameter 'shipping_address' does not appear to be dynamic
+[18:06:50] [WARNING] heuristic (basic) test shows that POST parameter 'shipping_address' might not be injectable
+[18:06:50] [INFO] testing for SQL injection on POST parameter 'shipping_address'
+[18:06:50] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:51] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:51] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:51] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:51] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:51] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:51] [INFO] testing 'Generic inline queries'
+[18:06:51] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:51] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:51] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:51] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:52] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:52] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:52] [INFO] testing 'Oracle AND time-based blind'
+[18:06:52] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:52] [WARNING] POST parameter 'shipping_address' does not seem to be injectable
+[18:06:52] [WARNING] POST parameter 'postal_code' does not appear to be dynamic
+[18:06:52] [WARNING] heuristic (basic) test shows that POST parameter 'postal_code' might not be injectable
+[18:06:52] [INFO] testing for SQL injection on POST parameter 'postal_code'
+[18:06:52] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:06:52] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[18:06:52] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[18:06:52] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[18:06:53] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[18:06:53] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[18:06:53] [INFO] testing 'Generic inline queries'
+[18:06:53] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[18:06:53] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[18:06:53] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[18:06:53] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[18:06:53] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[18:06:53] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[18:06:54] [INFO] testing 'Oracle AND time-based blind'
+[18:06:54] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[18:06:54] [WARNING] POST parameter 'postal_code' does not seem to be injectable
+[18:06:54] [ERROR] all tested parameters do not appear to be injectable. Try to increase values for '--level'/'--risk' options if you wish to perform more tests. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment') and/or switch '--random-agent', skipping to the next target
+[18:06:54] [INFO] you can find results of scanning in multiple targets mode inside the CSV file '/Users/taliaedwards/.local/share/sqlmap/output/results-11192021_0606pm.csv'
+
+[*] ending @ 18:06:54 /2021-11-19/
+
