@@ -1,5 +1,7 @@
 # E-Commerce Store (used Python, Flask, and Bootstrap for the CSS. Everything was tested using black-box methods such as functionality, input-partitioning, output-partitioning, and boundary testing. All code met PEP8 standards, used a pull request template, and is well commented.)
 
+SMOKE TEST: https://www.youtube.com/watch?v=9h9c-LT1KZg&ab_channel=NathanKowal
+
 Using Scrum - agile development methodology, this e-commerce store was created over the span of four months and is still continuing to be improved. Through six sprints focusing on the backend, frontend, security, and deployment of the store, a basic version of eBay was created. 
 
 First the database models were created in the backend. This consisted of Users, Product, Transaction, and Review. For example, below is a snipet of the Users model.
