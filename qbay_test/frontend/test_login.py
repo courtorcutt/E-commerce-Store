@@ -4,7 +4,6 @@ from unittest.mock import patch
 from qbay.models import User
 from selenium import webdriver
 
-
 class FrontEndLoginTest(BaseCase):
 
     # the following 3 test functions use three blackbox testing methods:
